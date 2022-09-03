@@ -9,7 +9,7 @@ class CustomSocket {
   Function(dynamic) onMessage;
 
   CustomSocket({
-    this.url = "https://realtime-socket.herokuapp.com/",
+    required this.url,
     required this.onConnect,
     required this.onDisconnect,
     required this.onMessage,
