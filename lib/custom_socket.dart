@@ -1,6 +1,7 @@
 library custom_socket;
 
-import 'package:socket_io_client/socket_io_client.dart' as IO;
+export 'package:socket_io_client/socket_io_client.dart';
+import 'package:socket_io_client/socket_io_client.dart';
 
 class CustomSocket {
   String url;
@@ -15,9 +16,9 @@ class CustomSocket {
     required this.onMessage,
   });
 
-  IO.Socket initializeSocket() {
-    IO.Socket socket;
-    socket = IO.io(url, <String, dynamic>{
+  Socket initializeSocket() {
+    Socket socket;
+    socket = io(url, <String, dynamic>{
       "transports": ["websocket"],
       "autoConnect": true,
     });
