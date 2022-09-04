@@ -1,5 +1,5 @@
 # custom_socket
- custom widget from packages socket_io_client
+ custom package from package socket_io_client
 
 # Example
 
