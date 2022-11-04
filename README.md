@@ -19,6 +19,6 @@ late IO.Socket socket;
       },
       onMessage: (data) {
         print(data);
-    ).initializeSocket();
+    }).initializeSocket();
   }
 ```

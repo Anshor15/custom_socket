@@ -8,12 +8,14 @@ class CustomSocket {
   Function(dynamic) onConnect;
   Function(dynamic) onDisconnect;
   Function(dynamic) onMessage;
+  Map<String, Function(dynamic)>? add;
 
   CustomSocket({
     required this.url,
     required this.onConnect,
     required this.onDisconnect,
     required this.onMessage,
+    this.add,
   });
 
   Socket initializeSocket() {
@@ -34,6 +36,12 @@ class CustomSocket {
 
     //listens when the client is disconnected from the Server
     socket.on('disconnect', onDisconnect);
+
+    if (add != null) {
+      add!.forEach((key, value) {
+        socket.on(key, value);
+      });
+    }
 
     return socket;
   }
